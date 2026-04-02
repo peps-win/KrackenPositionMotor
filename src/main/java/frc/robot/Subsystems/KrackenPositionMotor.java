@@ -14,8 +14,7 @@ public class KrackenPositionMotor extends SubsystemBase {
     private final static TalonFX KrackenMotor = new TalonFX(Constants.KrackenPositionMotor.CANID);
     
         private final static PositionVoltage KrackenMotorPositionVoltage = new PositionVoltage(0);
-                private final VelocityVoltage KrackenMotorVelocityVoltage = new VelocityVoltage(0);
-            
+        
                 public KrackenPositionMotor() {
                     KrackenMotor.getConfigurator().apply(new TalonFXConfiguration());
                     TalonFXConfiguration KrackenMotorConfig = new TalonFXConfiguration();
@@ -35,14 +34,11 @@ public class KrackenPositionMotor extends SubsystemBase {
                 
                 }
             
-                public static void setKrackenPosition(double rotations) {
-                    KrackenMotor.setControl(KrackenMotorPositionVoltage.withPosition(rotations));
+                
+    public static void setKrackenPosition(double rotations) {
+        KrackenMotor.setControl(KrackenMotorPositionVoltage.withPosition(rotations));
 
                 
-    }
-
-    public void setKrackenVelocity(double velocity) {
-        KrackenMotor.setControl(KrackenMotorVelocityVoltage.withVelocity(velocity));
     }
 
     public double EncoderValue() {
