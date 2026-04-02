@@ -21,6 +21,12 @@ public class Robot extends TimedRobot {
   }
 
   @Override
+  public void robotInit()
+  {
+    krackenpositionmotor = new KrackenPositionMotor();
+  }
+
+  @Override
   public void robotPeriodic() {
     CommandScheduler.getInstance().run();
   }
